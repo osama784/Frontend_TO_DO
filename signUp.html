@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="static/styles/signUp.css">
+    <link rel="stylesheet" href="static/all.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="header-welcome">
+                <a href="index.html">
+                    <h2>Welcome ,<span>User</span></h2>
+                </a>
+            </div>
+    </header>
+    <div class="sign container">
+        <div class="image">
+            <img src="static/images/Verification-Transparent-PNG.png" alt="authentication" draggable="false">
+        </div>
+        <form action="" method="POST">
+            <div class="username">
+                <label for="username">Username</label>
+                <div>
+                    <i class="fa-solid fa-user"></i>
+                    <input type="text" placeholder="example: omar" name="username" id="username">
+                </div>
+            </div>
+
+            <div class="email">
+                <label for="email">Email</label>
+                <div>
+                    <i class="fa-solid fa-envelope"></i>
+                    <input type="text" placeholder="example: omar@gmail.com" name="email" id="email">
+                </div>
+            </div>
+
+            <div class="password">
+                <label for="password">Password</label>
+                <div>
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" placeholder="&#183;&#183;&#183;&#183;&#183;&#183;&#183;&#183;"
+                        name="password" id="password">
+                </div>
+            </div>
+            <div class="sign-btn">
+                <input type="button" value="Sign up" name="sign">
+            </div>
+        </form>
+        <div class="login">
+            <p>Already have an account? <a href="login.html">Login</a></p>
+        </div>
+    </div>
+    <div class="success">
+        <i class="fa-regular fa-circle-check"></i>
+        <p>Successfully Signed Up!</p>
+        <a href="index.html">Go Home</a>
+    </div>
+</body>
+<script src="static/js/api_sign.js"></script>
+<script src="static/js/sign.js"></script>
+
+</html>

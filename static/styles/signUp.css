@@ -1,0 +1,296 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: white;
+    font-family: "Cairo", sans-serif;
+    padding-top: 77px;
+}
+
+::selection {
+    background-color: #222c38;
+    color: white;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Small */
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+/* Medium */
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+/* Large */
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+
+.theme {
+    background-color: #18315380;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    transition: 0.3s;
+}
+
+header {
+    width: 100%;
+    height: 75px;
+    background-color: white;
+    box-shadow: 0 3px 10px 0px #ddd;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 5;
+    text-align: center;
+}
+
+header .container {
+    width: 90%;
+    display: flex;
+    padding-top: 15px;
+    letter-spacing: 1px;
+    justify-content: center;
+    transition: 0.3s;
+}
+
+
+header .container h2 span {
+    color: #17c9ed;
+}
+
+header .container h2 {
+    font-size: 2.5rem;
+    flex: 1;
+    transition: 0.3s;
+    color: #222c38;
+}
+
+@media (max-width: 400px) {
+    header .container h2 {
+        font-size: 1.75rem;
+
+    }
+}
+
+header .header-welcome {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+header .header-welcome i {
+    font-size: 20px;
+    display: none;
+    cursor: pointer;
+    padding: 5px;
+    transition: 0.3s;
+
+}
+
+
+.sign {
+    margin: 100px auto;
+    width: 400px;
+    background-color: #d3f0fe75;
+    border-radius: 10px;
+    padding: 20px 50px 40px;
+    display: flex;
+    gap: 30px;
+    flex-direction: column;
+    box-shadow: 0 10px 12px -3px #ddd;
+    border: 1px solid #ddd;
+    /* transition: all 0.3s, opacity 0; */
+}
+
+.sign form {
+    display: flex;
+    flex-direction: column;
+    
+    gap: 20px;
+    
+}
+
+
+.sign form > div:not(:last-of-type) {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    gap: 10px;
+    position: relative;
+    border: 1px solid transparent;
+}
+
+.sign form>div:not(:last-of-type) > div {
+    display: flex;
+    gap: 10px;
+}
+
+.sign form>div:not(:last-of-type)> div input {
+    width: 100%;
+}
+
+.sign input {
+    outline: none;
+    border: none;
+}
+
+
+.sign form > div:last-of-type input {
+    width: 100%;
+    padding: 10px;
+    color: #222c38;
+    background-color: white;
+    border: 1px solid #222c38;
+    border-radius: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+
+.sign form>div:last-of-type input:hover {
+    color: white;
+    background-color: #222c38;
+}
+
+.sign form>div:last-of-type input:active {
+    opacity: 0.8;
+}
+
+.sign .login {
+    text-align: center;
+    color: #222c38;
+}
+
+.sign .login a {
+    color: #222c38;
+    text-decoration: underline;
+}
+
+
+
+.sign .image img {
+    width: 100%;
+}
+
+
+.not-filled {
+    border: 1px solid rgba(255, 0, 0, 0.721) !important;
+}
+
+
+@media (max-width: 442px) {
+    .sign {
+        width: 85%;
+        padding: 20px 30px 30px;
+    }
+
+    
+}
+
+
+
+.success {
+    z-index: -1;
+    position: absolute;
+    background-color: white;
+    color: #222c38;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 500px;
+    gap: 20px;
+    top: 50%;
+    left: 50%;
+    perspective-origin:center;
+    transform: translate(-50%, -50%) scale3d(1, 1, 1);
+    padding: 40px;
+    border-radius: 10px;
+    font-size: 30px;
+    transition: transform 0.3s;
+    opacity: 0;
+    
+}
+
+.success a {
+    color: white;
+    background-color: #374f64;
+    padding: 10px;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 16px;
+    
+}
+
+
+.success i {
+    font-size: 90px;
+    color: #54c5d0;
+}
+
+.success p {
+    margin-bottom: 30px;
+}
+
+
+.success-shown {
+    opacity: 1 !important;
+    z-index: 5 !important;
+    transform: translate(-50%, -50%) scale3d(1.1, 1.1, 1) !important;
+}
+
+
+@media (max-width:600px) {
+    .success {
+    width: 85%;
+    font-size: 20px;
+    }
+}

@@ -1,0 +1,43 @@
+in sendValues():
+showing message that the task has been added successfully. - done
+reviewing src-6 of hide post in django to see the animation stops
+
+in sendValues():
+showing message if the values are not filled. - done nearly
+
+
+
+do not remove the theme wen category form is done - done
+grid template columns for categories - done with 20% 80%
+
+
+fixingissues function():
+do not loop every time you click on the menu, just once - done
+
+
+
+1. form for change categories: delete selected categories - edit categories.
+2. when clicked on category -> fetch an api and put it in the session storage.
+3. reviewing all odds for responses in every api.
+4. get the token and put it inthe session storage.
+5. login page.
+
+
+new :
+
+fixing the q paramater: add the before class for category. - done
+
+
+readd the listeners to the tasks. - done
+
+
+
+fixing the task number adding one in create task - done
+trash can
+sort issue 
+checkTask - checkCategory
+
+
+#060101
+#bebebe47
+

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TO Do</title>
+
+    <link rel="stylesheet" href="static/styles/normalize.css">
+    <link rel="stylesheet" href="static/styles/main.css">
+
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="static/all.min.css">
+
+    <!-- Font Family -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <div class="header-welcome">
+                <i class="fa-solid fa-bars menu"></i>
+                <h2>Welcome ,<span>User</span></h2>
+            </div>
+            <div class="header-icons">
+                <div class="log" title="login">
+                    <a href="#"><i class="fa-solid fa-arrow-right-to-bracket"></i></a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="all">
+        <nav>
+            <div class="categories-header">
+                <h3>Categories</h3>
+
+            </div>
+            <div class="categories">
+                <div class="add-category">
+                    <p>Add Category</p>
+                </div>
+                <div class="change-categories-button">
+                    <p>Change Categories</p>
+                </div>
+                <ul>
+                    <li class="all-categories">
+                        <div class="category_name">All</div><span>(0)</span>
+                    </li>
+
+                </ul>
+            </div>
+        </nav>
+        <div class="tasks--wrapper">
+            <div class="tasks-header">
+                <div>
+                    <h3>Tasks</h3>
+                    <i class="fa-solid fa-calendar-check"></i>
+                </div>
+                <div class="icon">
+                    <i class="fa-solid fa-square-plus fa-2x"></i>
+                    <span>Add Task</span>
+                </div>
+            </div>
+            <div class="tasks-choices">
+                <div data-done="All">All Tasks</div>
+                <div data-done="True">Done Tasks</div>
+                <div data-done="False">New Tasks</div>
+            </div>
+
+            <div class="container">
+                <div class="tasks-number">
+                    <p>
+                        <span>0</span> Task
+                    </p>
+                </div>
+                <div class="tasks">
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="form-container">
+        <form action="">
+            <div class="task-form-header">
+                <h2>Task</h2>
+            </div>
+
+            <div class="task_name">
+                <label for="task_name">Name:</label>
+                <input type="text" name="task_name" id="task_name" placeholder="e.g: Reading books." class="input">
+            </div>
+            <div class="description">
+                <label for="description">Description:</label>
+                <textarea type="text" name="description" id="description" class="input"></textarea>
+            </div>
+            <div class="category">
+                <label for="category">Category:</label>
+                <select name="category" id="category" class="input">
+                    <option value="-1">-------</option>
+                </select>
+            </div>
+            <div class="confirm">
+                <input type="submit" value="Add" name="add" class="add">
+            </div>
+        </form>
+        <div class="close"><i class="fa-solid fa-circle-xmark"></i></div>
+    </div>
+    <div class="category-form">
+        <form action="">
+            <div class="category-form-header">
+                <h2>Category</h2>
+            </div>
+            <div class="category_name">
+                <label for="category_name">Name:</label>
+                <input type="text" name="name" id="category_name" placeholder="e.g: Reading books." class="input">
+            </div>
+            <div class="confirm">
+                <input type="submit" value="Add" name="add" class="add">
+            </div>
+        </form>
+        <div class="close"><i class="fa-solid fa-circle-xmark"></i></div>
+    </div>
+    <div class="message">
+        <p>Task Added Successfully!</p>
+        <span>
+            <i class="fa-solid fa-xmark"></i>
+        </span>
+    </div>
+    <div class="delete-form">
+        <form action="">
+            <div class="delete-message">
+                <p>Are You Sure You Want to Delete This Task?</p>
+            </div>
+            <div class="buttons">
+                <input type="submit" value="Delete" name="delete" class="delete">
+                <input type="submit" value="Cancel" name="cancel" class="cancel">
+            </div>
+            <div class="close"><i class="fa-solid fa-circle-xmark"></i></div>
+
+        </form>
+    </div>
+
+    <div class="change-categories">
+        <h2>Categories</h2>
+        <form action="">
+            <ul>
+
+            </ul>
+        </form>
+        <div class="close"><i class="fa-solid fa-circle-xmark"></i></div>
+    </div>
+
+    <div class="logout-form">
+        <form action="">
+            <div class="confirm-message">
+                <p>Are You Sure You Want to Logout?</p>
+            </div>
+            <div class="buttons">
+                <input type="submit" value="Logout" name="logout" class="logout">
+                <input type="submit" value="Cancel" name="cancel" class="cancel">
+            </div>
+            <div class="close"><i class="fa-solid fa-circle-xmark"></i></div>
+
+        </form>
+    </div>
+</body>
+
+<script src="static/js/main.js"></script>
+<script src="static/js/api.js"></script>
+
+</html>
