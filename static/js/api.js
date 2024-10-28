@@ -129,7 +129,7 @@ let ShowTaskList = () => {
   tasks_wrapper.innerHTML = "";
   // to reAdd the listeners
 
-  endpoint = `http://127.0.0.1:8000/tasks/?q_category=${q_category}&q_done=${q_done}`;
+  endpoint = `https://osamaTasks.pythonanywhere.com/tasks/?q_category=${q_category}&q_done=${q_done}`;
   fetch(endpoint, {
     headers: {
       "Content-type": "application/json",
@@ -405,7 +405,7 @@ let CreateTask = (name, description, category) => {
     };
   }
 
-  fetch("http://127.0.0.1:8000/tasks/create/", {
+  fetch("https://osamaTasks.pythonanywhere.com/tasks/create/", {
     method: "POST",
     headers: {
       "Content-type": "application/json",
@@ -557,14 +557,17 @@ let UpdateTask = (name, description, category) => {
       category: null,
     };
   }
-  fetch(`http://127.0.0.1:8000/tasks/${current_task_id}/update/`, {
-    method: "PUT",
-    headers: {
-      "Content-type": "application/json",
-      Authorization: `Token ${localStorage.getItem("token")}`,
-    },
-    body: JSON.stringify(information),
-  })
+  fetch(
+    `https://osamaTasks.pythonanywhere.com/tasks/${current_task_id}/update/`,
+    {
+      method: "PUT",
+      headers: {
+        "Content-type": "application/json",
+        Authorization: `Token ${localStorage.getItem("token")}`,
+      },
+      body: JSON.stringify(information),
+    }
+  )
     .then((response) => response.json())
     .then((data) => {
       if (data.detail) {
@@ -648,13 +651,16 @@ let UpdateTask = (name, description, category) => {
 
 let DeleteTask = () => {
   let current_status;
-  fetch(`http://127.0.0.1:8000/tasks/${current_task_id}/delete/`, {
-    method: "DELETE",
-    headers: {
-      "Content-type": "application/json",
-      Authorization: `Token ${localStorage.getItem("token")}`,
-    },
-  })
+  fetch(
+    `https://osamaTasks.pythonanywhere.com/tasks/${current_task_id}/delete/`,
+    {
+      method: "DELETE",
+      headers: {
+        "Content-type": "application/json",
+        Authorization: `Token ${localStorage.getItem("token")}`,
+      },
+    }
+  )
     .then((response) => {
       if (response.status == 401) {
         current_status = 401;
@@ -672,20 +678,23 @@ let DoTask = (done) => {
   let information = {
     is_done: done,
   };
-  fetch(`http://127.0.0.1:8000/tasks/${current_task_id}/update/`, {
-    method: "PATCH",
-    headers: {
-      "Content-type": "application/json",
-      Authorization: `Token ${localStorage.getItem("token")}`,
-    },
-    body: JSON.stringify(information),
-  })
+  fetch(
+    `https://osamaTasks.pythonanywhere.com/tasks/${current_task_id}/update/`,
+    {
+      method: "PATCH",
+      headers: {
+        "Content-type": "application/json",
+        Authorization: `Token ${localStorage.getItem("token")}`,
+      },
+      body: JSON.stringify(information),
+    }
+  )
     .then((response) => response.json())
     .then((data) => {});
 };
 
 let ShowCategoryList = () => {
-  fetch("http://127.0.0.1:8000/tasks/categories/", {
+  fetch("https://osamaTasks.pythonanywhere.com/tasks/categories/", {
     headers: {
       "Content-type": "application/json",
       Authorization: `Token ${localStorage.getItem("token")}`,
@@ -764,7 +773,7 @@ let CreateCategory = () => {
   let information = {
     name: categoryForm.name.value,
   };
-  fetch(`http://127.0.0.1:8000/tasks/categories/create/`, {
+  fetch(`https://osamaTasks.pythonanywhere.com/tasks/categories/create/`, {
     method: "POST",
     headers: {
       "Content-type": "application/json",
@@ -875,7 +884,7 @@ let CreateCategory = () => {
 
 let DeleteCategory = () => {
   fetch(
-    `http://127.0.0.1:8000/tasks/categories/${current_category_id}/delete/`,
+    `https://osamaTasks.pythonanywhere.com/tasks/categories/${current_category_id}/delete/`,
     {
       method: "DELETE",
       headers: {
@@ -903,7 +912,7 @@ let UpdateCategory = (categoryName) => {
     name: categoryName,
   };
   fetch(
-    `http://127.0.0.1:8000/tasks/categories/${current_category_id}/update/`,
+    `https://osamaTasks.pythonanywhere.com/tasks/categories/${current_category_id}/update/`,
     {
       method: "PUT",
       headers: {
