@@ -280,11 +280,14 @@ let AddingTaskListiners = () => {
       formContainer.querySelector(".description textarea").innerText =
         oldValueDesc.innerText;
 
+      const categorySelectElement =
+        formContainer.querySelector(".category select");
+
       if (task.querySelector("small")) {
         let oldValueCateg = task.querySelector("small").dataset.id;
-        formContainer
-          .querySelector(`.category select option[value="${oldValueCateg}"]`)
-          .setAttribute("selected", true);
+        categorySelectElement.value = oldValueCateg;
+      } else {
+        categorySelectElement.value = "-1";
       }
 
       // Showing the form
